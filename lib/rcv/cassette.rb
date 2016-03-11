@@ -1,6 +1,5 @@
 require 'yaml'
 require 'rest-client'
-require 'diffy'
 
 module RCV
   module HeaderDowncaser
