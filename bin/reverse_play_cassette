@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'minitest'
+require 'rcv'
+
+cassette = ARGV[0]
+c = RCV::Cassette.new(cassette)
+puts "REVERSE PLAY: #{cassette}"
+failed = false
+include MiniTest::Assertions
+c.reverse_play.each_with_index do |(request, actual, expected), i|
+  puts "\t#{i}: #{request[:url]}\n"
+  if actual != expected
+    puts "\t#{i}: FAIL"
+    puts diff(actual, expected)
+  else
+    puts "\t#{i}: PASS"
+  end
+end
+
+exit(1) if failed
