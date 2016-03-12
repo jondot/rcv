@@ -1,7 +1,7 @@
 ---
 http_interactions:
 - request:
-    method: post
+    method: get
     uri: https://gist.githubusercontent.com/jondot/fa16c8dc58257c714341/raw/5fb566a7bac94251d4e503620cdd4d71727da54d/foo.json
     body:
       encoding: UTF-8
